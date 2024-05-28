@@ -24,9 +24,8 @@ const crearContacto = (parentNode, contacto, db) =>{
     numeroContacto.innerHTML = contacto.numero
     iconoBorrar.innerHTML = "delete"
 
-
     divContacto.classList.add("contactos")
-    iconoBorrar.classList.add("material-symbols-outline","icono")
+    iconoBorrar.classList.add("material-symbols-outlined","icono")
 
     iconoBorrar.onclick = () =>{
         db.removeItem(contacto.id)

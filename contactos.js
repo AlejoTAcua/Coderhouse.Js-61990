@@ -9,7 +9,7 @@ const db = window.localStorage
 
 btnAgregar.onclick = () => {
     let contacto = {
-        id: Math.random(1,100),
+        id: Math.random(),
         nombre: nombre.value,
         apellido: apellido.value,
         numero: numero.value,
