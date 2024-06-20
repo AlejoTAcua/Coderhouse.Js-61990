@@ -14,7 +14,28 @@ btnAgregar.onclick = () => {
         apellido: apellido.value,
         numero: numero.value,
     }
-    agregarDatosContacto(db, contacto)
+    if((nombre.value == "") && (apellido.value == "") && (numero.value == "")) {
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Ingrese al menos dos datos",
+        })
+    } else if((apellido.value == "") && (numero.value == "")||(nombre.value == "") && (numero.value == "")||(nombre.value == "") && (apellido.value == "")){
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Ingrese un dato más",
+        })
+    } else {
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Contacto guardado correctamente",
+            showConfirmButton: false,
+            timer: 1500
+        });
+        agregarDatosContacto(db, contacto);
+    }
 }
 
 datosListaContactos(db, contactosCelular)

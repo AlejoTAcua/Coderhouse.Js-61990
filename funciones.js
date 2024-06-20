@@ -1,6 +1,8 @@
 const agregarDatosContacto = (db, contacto) => {
     db.setItem(contacto.id, JSON.stringify(contacto))
-    window.location.href = "/"
+    setTimeout(() =>{
+        window.location.href = "/"
+    },1510)
 }
 
 const datosListaContactos = (db, parentNode) =>{
@@ -28,8 +30,26 @@ const crearContacto = (parentNode, contacto, db) =>{
     iconoBorrar.classList.add("material-symbols-outlined","icono")
 
     iconoBorrar.onclick = () =>{
-        db.removeItem(contacto.id)
-        window.location.href = "/"
+        Swal.fire({
+            title: "¿Estás seguro que quieres eliminar este contacto?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "¡Si, borralo!",
+            cancelButtonText: "Cancelar"
+        }).then((result) => {
+            if (result.isConfirmed){
+            Swal.fire({
+                title: "¡Borrado!",
+                text: "El contacto ha sido eliminado.",
+                icon: "success"
+            });
+            setTimeout(() =>{
+                db.removeItem(contacto.id)
+                window.location.href = "/"
+            },1510)}
+        });
     }
 
     divContacto.appendChild(nombreContacto)

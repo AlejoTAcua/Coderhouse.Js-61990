@@ -9,7 +9,7 @@ html{
 
 /* Header */
 .encabezado{
-    background-color: greenyellow;
+    background-color: #b0c4de;
     width: 100vw;
     height: 60px;
     display: flex;
@@ -19,7 +19,7 @@ html{
 .titulo{
     text-align: center;
     color: black;
-    font-size: 20px;
+    font-size: 28px;
 }
 /* Main */
 .app{
@@ -30,7 +30,7 @@ html{
     position: relative;
 }
 .tarjeta{
-    background-color: green;
+    background-color: #a0a0a0;
     padding: 10px;
     margin: 10px;
     border-radius: 5px;
@@ -39,6 +39,11 @@ html{
     gap: 10px;
     align-items: center;
     color: white;
+}
+.tarjeta h2{
+    padding: 10px;
+    background-color: #5e5c5c;
+    border-radius: 5px;
 }
 .tarjeta input{
     width: 100%;
@@ -49,7 +54,7 @@ html{
     outline: none;
 
     &:focus{
-        border-bottom: 1px solid blue;
+        border-bottom: 2px solid blue;
     }
 }
 .btnAgregar{
@@ -58,17 +63,25 @@ html{
     border-radius: 5px;
     border: none;
     outline: none;
+    font-size: 16px;
+    text-decoration: dotted;
 
     &:hover{
-        background-color: gray;
+        background-color: rgb(26, 181, 192);
         cursor: pointer;
     }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .lista{
     display: flex;
     flex-direction: column;
-    background-color: rgb(65, 65, 65);
+    background-color: #5e5c5c;
     width: 100%;
     border-radius: 5px;
     padding: 5px 10px;
