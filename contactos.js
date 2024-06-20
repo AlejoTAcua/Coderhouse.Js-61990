@@ -26,6 +26,12 @@ btnAgregar.onclick = () => {
             title: "Oops...",
             text: "Ingrese un dato más",
         })
+    } else if(numero.value == ""){
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "No se puede guardar un contacto sin un número",
+        })
     } else {
         Swal.fire({
             position: "top-end",
